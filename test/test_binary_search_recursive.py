@@ -11,8 +11,9 @@ class TestBinarySearch(unittest.TestCase):
         left_idx: int = 0
         right_idx: int = len(collection) - 1
 
-        self.assertFalse(
-            binary_search_recursive(collection, search, left_idx, right_idx)
+        self.assertEqual(
+            binary_search_recursive(collection, search, left_idx, right_idx),
+            (False, -1),
         )
 
     def test_when_collection_is_not_empty(self):
@@ -38,8 +39,8 @@ class TestBinarySearch(unittest.TestCase):
         left_idx: int = 0
         right_idx: int = len(collection) - 1
 
-        self.assertTrue(
-            binary_search_recursive(collection, search, left_idx, right_idx)
+        self.assertEqual(
+            binary_search_recursive(collection, search, left_idx, right_idx), (True, 5)
         )
 
     def test_when_item_not_in_collection(self):
@@ -65,8 +66,9 @@ class TestBinarySearch(unittest.TestCase):
         left_idx: int = 0
         right_idx: int = len(collection) - 1
 
-        self.assertFalse(
-            binary_search_recursive(collection, search, left_idx, right_idx)
+        self.assertEqual(
+            binary_search_recursive(collection, search, left_idx, right_idx),
+            (False, -1),
         )
 
     def test_when_item_in_collection(self):
@@ -92,8 +94,8 @@ class TestBinarySearch(unittest.TestCase):
         left_idx: int = 0
         right_idx: int = len(collection) - 1
 
-        self.assertTrue(
-            binary_search_recursive(collection, search, left_idx, right_idx)
+        self.assertEqual(
+            binary_search_recursive(collection, search, left_idx, right_idx), (True, 1)
         )
 
 

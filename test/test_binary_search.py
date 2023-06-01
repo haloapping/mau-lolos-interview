@@ -8,25 +8,25 @@ class TestBinarySearch(unittest.TestCase):
         collection = []
         search = 1
 
-        self.assertFalse(binary_search(collection, search))
+        self.assertEqual(binary_search(collection, search), (False, -1))
 
     def test_when_collection_is_not_empty(self):
         collection = [-6, -5, -1, 0, 1, 4, 4, 5, 6, 8, 9, 10, 30, 34, 56, 100]
         search = 4
 
-        self.assertTrue(binary_search(collection, search))
+        self.assertEqual(binary_search(collection, search), (True, 5))
 
     def test_when_item_not_in_collection(self):
         collection = [-6, -5, -1, 0, 1, 4, 4, 5, 6, 8, 9, 10, 30, 34, 56, 100]
         search = -100
 
-        self.assertFalse(binary_search(collection, search))
+        self.assertEqual(binary_search(collection, search), (False, -1))
 
     def test_when_item_in_collection(self):
         collection = [-6, -5, -1, 0, 1, 4, 4, 5, 6, 8, 9, 10, 30, 34, 56, 100]
         search = -5
 
-        self.assertTrue(binary_search(collection, search))
+        self.assertEqual(binary_search(collection, search), (True, 1))
 
 
 if __name__ == "__main__":

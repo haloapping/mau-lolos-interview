@@ -1,7 +1,5 @@
 from typing import Any
 
-import shuffle
-
 
 def linear_search(collection: list[Any], search: Any) -> tuple[bool, int]:
     for idx, item in enumerate(collection):
@@ -42,3 +40,29 @@ def binary_search_recursive(
             return binary_search_recursive(collection, search, left_idx, mid_idx - 1)
     else:
         return False, -1
+
+
+def min(nums: list[int | float]) -> int | float:
+    if len(nums) > 0:
+        min: int | float = nums[0]
+
+        for num in nums[1:]:
+            if num < min:
+                min = num
+
+        return min
+    else:
+        raise ValueError("nums is empty list")
+
+
+def max(nums: list[int | float]) -> int | float:
+    if len(nums) > 0:
+        max: int | float = nums[0]
+
+        for num in nums[1:]:
+            if num > max:
+                max = num
+
+        return max
+    else:
+        raise ValueError("nums is empty list")
